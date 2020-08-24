@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M Hotel - showroom</title>
+  <link rel="stylesheet" href="reset.css">
+  <script src="https://kit.fontawesome.com/aab35b07f9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container showroom-bg">
+    <nav>
+      <div class="logo">
+        <img src="https://img.icons8.com/cotton/64/000000/surf--v1.png"/>
+        <h1>M<br> Hotel</h1>
+      </div>
+      <ul>
+        <li><a href="#">Rooms</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section id="action">
+      <div class="wraper">
+      </div>
+      
+    </section>
+
+    <section id="gallery">    
+      <div class="room-gallery">
+        <img src="" class="gallery-hightlight" alt="">
+        <div class="room-preview"></div>
+      </div>
+    </section>
+
+    <section id="info">
+      <div class="info-wrap">
+        
+      </div>
+      
+    </section>
+  
+    <section id="description">
+      <div class="desc-wrap">
+        <div class="left">
+
+        </div>
+        <div class="right">
+          <h3>Amenities</h3>
+          <ul class="amenities">
+            
+          </ul>
+        </div>
+      </div>
+    </section>
+    <br><br><br><br><br>
+  </div>
+
+  <!-- POP UP -->
+  <div id="popup" class="">
+    <div class="popup-container">
+      <i class="far fa-calendar-check fa-5x"></i>
+      <h4>訂房成功</h4>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-overlay">
+      <button class="modal-close">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+        </svg>
+      </button>
+      <div class="modal-container">
+
+        <div class="date-container">
+          <div class="datepicker">
+            <h1 class="dp">CHECK-IN<span> DATE</span></h1>
+            <div class="start-date-picker"></div>
+          </div>
+          <div class="datepicker">
+            <h1 class="dp">CHECK-OUT<span> DATE</span></h1>
+            <div class="end-date-picker"></div>
+          </div>
+        </div>
+
+        <div class="info-container">
+          <form class="book">
+            <small id="helpText" class="form-text text-muted"></small>
+            <div class="form-group">
+              <label for="name">Contact Name:</label>
+              <input type="text" class="" name="name" id="name" placeholder="Enter your name">
+              
+            </div>
+            <div class="form-group">
+              <label for="phone">Contact Number:</label>
+              <input type="text" class="" name="phone" id="phone" placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+              <button id="login-btn" type="submit" class="btn btn-outline-light bg-secondary">Submit</button>
+            </div>
+          </form> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="datepicker.js"></script>
+  <script src="showroom.js"></script>
+</body>
+</html>
