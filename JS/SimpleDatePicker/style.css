@@ -1,0 +1,7 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  /* background-color: lavenderblush; */
+  background: rgb(249,242,206);
+  background: linear-gradient(156deg, rgba(249,242,206,1) 2%, rgba(184,230,246,1) 96%);
+}
