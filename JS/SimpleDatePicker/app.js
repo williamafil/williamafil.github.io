@@ -1,1 +1,3 @@
-console.log('hello from app.js')
+datePicker({
+  root: document.querySelector('#date-picker'),
+});
