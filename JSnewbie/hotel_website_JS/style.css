@@ -1,0 +1,801 @@
+/* Heading */
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+/*             */
+/*    HEADER   */
+/*             */
+.site-header {
+  height: 100%;
+  width: 100%;
+  background-image: url("./img/pexels-eberhard-grossgasteiger.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  z-index: 100;
+  /* background-color: rgba(255,255,255,.1); */
+}
+
+nav.sticky {
+  position: fixed;
+}
+
+.white-nav {
+  background-color: rgba(255,255,255,.1);
+  border-bottom: 3px solid rgba(0,0,0,.05);
+}
+
+nav img {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  font-family: 'Italiana', serif;
+  font-size: 1.4rem;
+  /* font-weight: 300; */
+  margin: 0 1.5rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+nav ul li a:hover {
+  border-bottom: 2px solid #333;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+main h1 {
+  width: 60%;
+  /* background-color: lightsalmon; */
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 4rem;
+  /* color: rgba(200,200,200,.3); */
+  color: rgba(255,255,255,.01);
+  text-shadow: 1px 1px 2px rgba(255,255,255,.02), 0 0 1em whitesmoke, 0 0 0.2em whitesmoke;
+}
+
+article.search-bar {
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+article.search-bar .wrap {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 30px solid #fff;
+}
+
+article.search-bar .wrap .room-selector,
+article.search-bar .wrap .room-checkin,
+article.search-bar .wrap .room-checkout,
+article.search-bar .wrap .room-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 200px;
+  /* padding: 10px; */
+  border-right: 1px solid #ccc;
+}
+
+article.search-bar .wrap .room-search {
+  border: 0;
+}
+
+article.search-bar .wrap  label {
+  margin: 5px 0;
+}
+
+article.search-bar .wrap select,
+article.search-bar .wrap input {
+  border: 0;
+  width: 95%;
+  /* height: 30px; */
+  font-size: 1.5rem;
+  outline: none;
+}
+
+
+article.search-bar .wrap .room-search input[type="submit"] {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  background-color: khaki;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+
+
+/*             */
+/*    ABOUT    */
+/*             */
+section#about {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("./img/teo-leguay-vqaLqlWPb2c-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+section#about .wrap {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+section#about .wrap h1 {
+  font-family: 'Raleway', sans-serif;
+  /* min-width: 550px; */
+  max-width: 650px;
+  font-size: 5rem;
+  color: whitesmoke;
+  position: absolute;
+  bottom: 100px;
+}
+
+section#about .wrap p {
+  /* min-width: 550px; */
+  max-width: 650px;
+  /* font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 1px; */
+  color: whitesmoke;
+  padding: 0 0 0 6px;
+  /* padding: 10px 30px 20px 30px; */
+  position: absolute;
+  bottom: 0px;
+
+
+  margin: 0 0 1rem 0;
+  font-family: 'Italiana', serif;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  letter-spacing: 1px;
+}
+
+
+/*                      */
+/*      EXPERIENCE      */
+/*                      */
+section#experiences {
+  height: 100%;
+  width: 100%;
+  background-image: url("./img/rene-pierre-normandeau-sl87lljZVLg-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+section#experiences .wrap {
+  height: 100%;
+  width: 100vw;
+  /* overflow: hidden; */
+  /* display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; */
+
+  position: relative;
+}
+
+section#experiences .wrap button {
+  height: 80px;
+  width: 80px;
+  z-index: 100;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+section#experiences .wrap button.prev-btn {
+  position: absolute;
+  left: 0;
+  bottom: 50%;
+}
+
+section#experiences .wrap button.next-btn {
+  position: absolute;
+  right: 0;
+  bottom: 50%;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*                   */
+/*      ROOMS      */
+/*                   */
+section#rooms {
+  width: 100%;
+  background: rgb(203,203,203);
+  background: linear-gradient(21deg, rgba(203,203,203,1) 0%, rgba(255,255,255,1) 50%, rgba(237,237,237,0.8939950980392157) 100%);
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+}
+
+section#rooms h1 {
+  float: right;
+  font-size: 5rem;
+  font-weight: 700;
+  margin: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  color: #333;
+}
+
+section#rooms .wrap {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+}
+.loading div {
+  width: 1rem;
+  height: 1rem;
+  margin: 2rem 0.3rem;
+  background: #000;
+  border-radius: 50%;
+  animation: 0.9s bounce infinite alternate;
+}
+.loading div:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.loading div:nth-child(3) {
+  animation-delay: 0.6s;
+}
+@keyframes bounce {
+  to {
+    opacity: 0.3;
+    transform: translate3d(0, -1rem, 0);
+ }
+}
+
+
+section#rooms .wrap .room {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  /* width: 30%; */
+  max-width: 350px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,.1);
+  margin: 20px;
+}
+
+section#rooms .wrap .room:hover,
+section#rooms .wrap .room img:hover,
+section#rooms .wrap .room .desc:hover {
+
+  box-shadow: 0px 1px 2px rgba(0,0,0,.1);
+}
+
+section#rooms .wrap .room img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  /* min-width: 150px; */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,.1);
+}
+
+section#rooms .wrap .room .desc {
+  padding: 30px;
+  background-color: #fff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,.1);
+}
+
+/* 
+section#rooms .wrap article.round {
+  background-color: whitesmoke;
+  margin: 20px 10px 20px 10px;
+  width: 98%;
+  height: 100%;
+  border-radius: 20px;
+} */
+
+
+
+
+
+/*                   */
+/*      CONTACT      */
+/*                   */
+section#contact {
+  height: 100%;
+  width: 100%;
+  background-image: url("./img/rene-pierre-normandeau-sl87lljZVLg-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+section#contact .wrap {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+section#contact .wrap .contact-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  
+}
+
+section#contact .wrap .contact-form label,
+section#contact .wrap .contact-form input,
+section#contact .wrap .contact-form textarea {
+  margin: 3px 0;
+  width: 100%;
+  border: 0;
+  outline: none;
+}
+
+section#contact .wrap .contact-form label {
+  font-family: 'Italiana', serif;
+  letter-spacing: 1px;
+}
+
+section#contact .wrap .contact-form input {
+  font-family: 'Italiana', serif;
+  height: 30px;
+  padding: 10px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+
+}
+
+section#contact .wrap .contact-form textarea {
+  padding: 10px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+ 
+
+
+
+
+
+
+
+/* ----------------------------------- */
+/* iPhone X 的 CSS Media Queries 的語法 */
+/* ----------------------------------- */
+@media only screen 
+  and (min-device-width : 375px) 
+  and (max-device-width : 812px)
+  and (-webkit-device-pixel-ratio : 3)
+  and (orientation : portrait) {
+    /*             */
+    /*    HEADER   */
+    /*             */
+
+    .site-header {
+      height: 100%;
+      width: 100%;
+      background-image: url("./img/pexels-eberhard-grossgasteiger.jpg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      position: relative;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 100px;
+      width: 100%;
+    }
+
+    .white-nav {
+      background-color: #fff;
+      border-bottom: 2px solid #ccc;
+    }
+  
+    nav img {
+      width: 2rem;
+      height: 2rem;
+      margin: 1rem 0;
+    }
+  
+    nav ul {
+      display: flex;
+      align-items: center;
+    }
+  
+    nav ul li {
+      font-family: 'Italiana', serif;
+      font-size: 1rem;
+      font-weight: 300;
+      /* font-weight: 300; */
+      margin: 1rem 1rem;
+    }
+  
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+  
+    nav ul li a:hover {
+      border-bottom: 2px solid #333;
+    }   
+    
+    
+    main {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    main h1 {
+      width: 60%;
+      /* background-color: lightsalmon; */
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+      font-size: 2rem;
+      /* color: rgba(200,200,200,.3); */
+      color: rgba(255,255,255,.01);
+      text-shadow: 1px 1px 2px rgba(255,255,255,.02), 0 0 1em whitesmoke, 0 0 0.2em whitesmoke;
+    }
+
+    article.search-bar {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      
+    }
+
+    article.search-bar .wrap {
+      width: 100%;
+      /* height: 100%; */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      background-color: antiquewhite;
+    }
+
+    article.search-bar .wrap .room-selector,
+    article.search-bar .wrap .room-checkin,
+    article.search-bar .wrap .room-checkout,
+    article.search-bar .wrap .room-search {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      margin: 5px 0;
+      border:0;
+    }
+
+    article.search-bar .wrap .room-search {
+      border: 0;
+    }
+
+    article.search-bar .wrap  label {
+      margin: 5px 0;
+    }
+
+    article.search-bar .wrap select,
+    article.search-bar .wrap input {
+      border: 0;
+      width: 95%;
+      height: 30px;
+      font-size: 1.5rem;
+      outline: none;
+    }
+
+
+    article.search-bar .wrap .room-search input[type="submit"] {
+      border: 1px solid #333;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      color: #333;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 200;
+      letter-spacing: 1px;
+    }
+
+
+
+    /*             */
+    /*    ABOUT    */
+    /*             */
+    section#about {
+      height: 100%;
+      width: 100%;
+      background-image: url("./img/teo-leguay-vqaLqlWPb2c-unsplash.jpg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+
+    section#about .wrap {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+    }
+
+
+    section#about .wrap h1 {
+      font-family: 'Raleway', sans-serif;
+      /* min-width: 450px; */
+      /* width: 80%; */
+      max-width: 350px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: whitesmoke;
+      padding: 0 0 0 5px;
+      /* padding: 10px 30px 20px 30px; */
+      position: absolute;
+      bottom: 120px;
+    }
+
+    section#about .wrap p {
+      max-width: 400px;
+      font-family: 'Italiana', serif;
+      font-size: 1.3rem;
+      font-weight: 200;
+      letter-spacing: 1px;
+      color: whitesmoke;
+      position: absolute;
+      bottom: 10px;
+    }
+
+
+    /*                      */
+    /*      EXPERIENCE      */
+    /*                      */
+    section#experiences {
+      height: 100%;
+      width: 100%;
+      background-image: url("./img/rene-pierre-normandeau-sl87lljZVLg-unsplash.jpg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+
+    section#experiences .wrap {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+    .carousel {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    
+    .carousel .item {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      min-width: 100vw;
+      height: 100%;
+    }
+    .carousel .item img {
+      position: relative;
+      margin: 0 30% 0 0;
+      /* right: 50%; */
+      /* margin: auto 0; */
+      max-width: 200px;
+      border: 5px solid rgba(255,255,255,.4);
+    }
+    
+    .carousel .item .caption {
+      position: relative;
+      background-color: #fff;
+      padding: .5rem;
+      z-index: 20;
+      left: 80px;
+      bottom: -160px;
+      /* width: 500px; */
+      min-width: 150px;
+    }
+    
+    .carousel .item .caption .caption-p {
+      margin: 0 0 1rem 0;
+      font-family: 'Italiana', serif;
+      font-size: .7rem;
+      line-height: 1.1rem;
+      letter-spacing: 1px;
+    }
+    
+    .carousel .item .caption .caption-btn {
+      background-color: khaki;
+      padding: .4rem;
+      margin: 0;
+      width: 70px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      font-size: .8rem;
+    }
+    
+    
+    
+    
+
+
+    /*                   */
+    /*      ROOMS      */
+    /*                   */
+    section#rooms {
+      
+      width: 100%;
+      /* background-color: whitesmoke; */
+      background: rgb(203,203,203);
+      background: linear-gradient(21deg, rgba(203,203,203,1) 0%, rgba(255,255,255,1) 50%, rgba(237,237,237,0.8939950980392157) 100%);
+
+    }
+
+
+
+
+    /*                   */
+    /*      CONTACT      */
+    /*                   */
+    section#contact {
+      height: 100%;
+      width: 100%;
+      background-image: url("./img/rene-pierre-normandeau-sl87lljZVLg-unsplash.jpg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+
+
+    section#contact .wrap {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    
+    section#contact .wrap .contact-form {
+      width: 75%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+      
+    }
+    
+    section#contact .wrap .contact-form label,
+    section#contact .wrap .contact-form input,
+    section#contact .wrap .contact-form textarea {
+      margin: 3px 0;
+      width: 100%;
+      border: 0;
+      outline: none;
+    }
+    
+    section#contact .wrap .contact-form label {
+      font-family: 'Italiana', serif;
+      letter-spacing: 1px;
+    }
+    
+    section#contact .wrap .contact-form input {
+      font-family: 'Italiana', serif;
+      height: 30px;
+      padding: 10px;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    
+    }
+    
+    section#contact .wrap .contact-form textarea {
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
+    
+
+  }
+

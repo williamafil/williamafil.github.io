@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M Hotel - </title>
+  <link rel="stylesheet" href="reset.css">
+  <script src="https://kit.fontawesome.com/aab35b07f9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+  <link rel="stylesheet" href="simple-date-picker.css">
+  <link rel="stylesheet" href="modal.css">
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="carousel.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <nav class="sticky">
+        <a href="#"><img src="./img/icons8-circled-m-100.png" alt=""></a> 
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experiences">Experience</a></li>
+          <li><a href="#rooms">Rooms</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <main>
+        <h1>RECONNECT WITH NATURE</h1>
+      </main>
+      <article class="search-bar">
+        <div class="wrap">
+          <div class="room-selector">
+            <label for="type">Room Type</label>
+
+            <select id="room-type" name="type">
+              <option value="Single Room">Single Room</option>
+              <option value="Deluxe Single Room">Deluxe Single Room</option>
+              <option value="Double Room">Double Room</option>
+              <option value="Deluxe Double Room">Deluxe Double Room</option>
+              <option value="Twin Room">Twin Room</option>
+              <option value="Deluxe Twin Room">Deluxe Twin Room</option>
+            </select>
+          </div>
+          <div class="room-checkin">
+            <label for="checkin">Check-in</label>
+            <input type="text" name="checkin" placeholder="2020-09-20">
+          </div>
+          <div class="room-checkout">
+            <label for="checkout">Check-out</label>
+            <input type="text" name="checkout" placeholder="2020-09-24">
+          </div>
+          <div class="room-search">
+            <input type="submit" name="checkout" value="Search">
+          </div>
+
+        </div>
+      </article>
+    </header>
+
+    <section id="about">
+      <div class="wrap">
+        <h1>Dive Into Your Next Destination</h1>
+        <p>M Hotel is an exclusive private member's resort offering world-class skiing, snow boarding and fine dining in the heart of the Rocky Mountains.</p>
+      </div>
+    </section>
+    
+    <section id="experiences">
+      <div class="wrap">
+        <button class="prev-btn" onclick="show(-1)"> <i class="fas fa-angle-double-left fa-4x"></i> </button>
+        <button class="next-btn" onclick="show(+1)"> <i class="fas fa-angle-double-right fa-4x"></i> </button>
+        
+        <div class="carousel">
+          <div class="item">
+            <div class="caption">
+              <p class="caption-p">A private community set amidst the graneur of the Rocky Mountains</p>
+              <div class="caption-btn">
+                Explore <span>→</span>
+              </div>
+            </div>
+            <img src="./img/experiences_pexels-gustav-lundborg-2016572.jpg" alt="">
+          </div>
+
+          <div class="item">
+            <div class="caption">
+              <p class="caption-p">A private community set amidst the graneur of the Rocky Mountains</p>
+              <div class="caption-btn">
+                Explore <span>→</span>
+              </div>
+            </div>
+            <img src="./img/experiences_pexels-visit-almaty-848593.jpg" alt="">
+          </div>
+
+          <div class="item">
+            <div class="caption">
+              <p class="caption-p">A private community set amidst the graneur of the Rocky Mountains</p>
+              <div class="caption-btn">
+                Explore <span>→</span>
+              </div>
+            </div>
+            <img src="./img/experiences_pexels-adrien-olichon-3534750.jpg" alt="">
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <section id="rooms">
+      <h1>ROOMS</h1>
+      <div class="wrap">
+        <div class="loading">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+      <!-- POPUP -->
+      <div id="popup" class="">
+        <div class="popup-container">
+          <i class="far fa-calendar-check fa-5x"></i>
+          <h4>訂房成功</h4>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-form">
+          <label for="name">Name</label>
+          <input type="text" name="name">
+          <label for="email">Email</label>
+          <input type="text" name="email">
+          <label for="subject">Subject</label>
+          <input type="text" name="subject">
+          <textarea name="content" id="content" cols="30" rows="10"></textarea>
+        </div>
+        
+      </div>
+    </section>
+  </div>
+
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-overlay">
+      <button class="modal-close">
+        <i class="fas fa-times fa-4x"></i>
+      </button>
+      <div class="modal-container">
+        <div id="simple-bar">
+
+          <div id="rendered-content">
+            <section id="heading">
+              <div class="wrapper">
+                <div class="title">Single Room</div>
+                <div class="price"><h4>Price</h4><p>$1380</p></div>
+                <a href="#modal" class="modal-trigger">Book Now</a>
+              </div> 
+            </section>
+            <section id="info">
+              <div class="wrapper">
+                <div class="short-desc">
+                  <h3 class="heading">Bed</h3>
+                  <h3 class="content">1</h3>
+                </div>
+                <div class="short-desc">
+                  <h3 class="heading">Footage</h3>
+                  <h3 class="content">18<small>ft</small></h3>
+                </div>
+                <div class="short-desc">
+                  <h3 class="heading">Max Guest</h3>
+                  <h3 class="content">2</h3>
+                </div>
+                <div class="short-desc">
+                  <h3 class="heading">Min Guest</h3>
+                  <h3 class="content">3</h3>
+                </div>
+                <div class="short-desc">
+                  <h3 class="heading">Bath</h3>
+                  <h3 class="content">4</h3>
+                </div>
+              </div>
+            </section>
+            <section id="description">
+              <div class="wrapper">
+                <div class="left">
+                  <h3>Description</h3>
+                  <p class="desc-text">
+                    ${ roomData.description }
+                  </p>
+                  <br>
+                  <h3>Check In/Out</h3>
+                  <div class="detail"><h4>Check-in</h4><p> ${roomData.checkInAndOut['checkInEarly']} ~ ${roomData.checkInAndOut['checkInLate']}</p></div>
+                  <div class="detail"><h4>Check-out</h4><p> ~ ${roomData.checkInAndOut['checkOut']}</p></div>
+            
+                  <br>
+                  <h3>Bed(s)</h3>
+                  <div class="detail"><h4>Size</h4><p>${ roomData.descriptionShort.Bed.map( item => item).join(', ')}</p></div>
+                  
+                  <br>
+                  <h3>Pricing</h3>
+                  <div class="detail"><h4>Mon - Fri</h4><p> $1500</p></div>
+                  <div class="detail"><h4>Weekends</h4><p>$1300</p></div>
+                </div>
+                <div class="right">
+                  <h3>Amenities</h3>
+                  <ul class="amenities">
+                    <li><i class="fas fa-wind fa-2x ${!obj['Air-Conditioner'] ? 'fade' : ''}"></i> <h4>A/C</h4> </li>
+                    <li><i class="fas fa-coffee fa-2x ${!obj['Breakfast'] ? 'fade' : ''}"></i> <h4>Breakfast</h4> </li>
+                    <li><i class="fas fa-child fa-2x ${!obj['Child-Friendly'] ? 'fade' : ''}""></i> <h4>Child Friendly</h4> </li>
+                    <li><i class="fas fa-mountain fa-2x ${!obj['Great-View'] ? 'fade' : ''}""></i> <h4>Great View</h4> </li>
+                    <li><i class="fas fa-wine-glass-alt fa-2x ${!obj['Mini-Bar'] ? 'fade' : ''}""></i> <h4>Mini Bar</h4> </li>
+                    <li><i class="fas fa-wine-glass-alt fa-2x ${!obj['Pet-Friendly'] ? 'fade' : ''}""></i> <h4>Pet Friendly</h4> </li>
+                    <li><i class="fas fa-stroopwafel fa-2x ${!obj['Refrigerator'] ? 'fade' : ''}""></i> <h4>Refrigerator</h4> </li>
+                    <li><i class="fas fa-concierge-bell fa-2x ${!obj['Room-Service'] ? 'fade' : ''}""></i> <h4>Room Service</h4> </li>
+                    <li><i class="fas fa-smoking-ban fa-2x ${!obj['Smoke-Free'] ? 'fade' : ''}""></i> <h4>Smoke Free</h4> </li>
+                    <li><i class="fas fa-couch fa-2x ${!obj['Sofa'] ? 'fade' : ''}"></i> <h4>Sofa</h4> </li>
+                    <li><i class="fas fa-tv fa-2x ${!obj['Television'] ? 'fade' : ''}""></i> <h4>Television</h4> </li>
+                    <li><i class="fas fa-wifi fa-2x ${!obj['Wi-Fi'] ? 'fade' : ''}""></i> <h4>Free Wifi</h4> </li>
+                  </ul>
+                </div>
+              </div>
+            </section>  
+          </div>
+          
+          <section id="gallery">    
+            <div class="wrapper">
+              <img src="" class="gallery-hightlight" alt="">
+              <div class="room-preview"></div>
+            </div>
+          </section>
+
+          <section id="book">
+            <div class="wrapper">
+              <input type="text">
+              <input type="text">
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="carousel.js"></script>
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"
+  import 'simplebar';
+  ></script>
+  <script src="utility.js"></script>
+  <script src="simple-date-picker.js"></script>
+  <script src="api.js"></script>
+  <script src="modal.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
