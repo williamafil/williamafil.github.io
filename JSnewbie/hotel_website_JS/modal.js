@@ -1,3 +1,37 @@
+let startDate = '';
+let startDatePrice = '';
+let endDate = '';
+let endDatePrice = '';
+
+function setDatePrice(source, date, price) {
+  console.log(source, date, price);
+  if (source === 'check-in'){
+    startDate = date;
+    startDatePrice = price;
+  } else if (source === 'check-out') {
+    endDate = date;
+    endDatePrice = price;
+  }
+
+  if (startDate && startDatePrice && endDate && endDatePrice){
+    calcTotalPrice();  
+  }
+}
+
+function calcTotalPrice() {
+  console.log('calc total price');
+  console.log(startDate, endDate)
+  let range = dateRange( new Date(startDate), new Date(endDate) );
+  let bookingDateRange = range.map(date => toISOLocal(date).slice(0, 10));
+  let totalPrice = 0;
+
+  const days = document.querySelectorAll('#check-in .day');
+  bookingDateRange.forEach( item => {
+    days.forEach(day => day.dataset.date === item ? totalPrice += Number(day.dataset.price) : '')
+  });
+  helpText.textContent = `總價 $${totalPrice}`;
+}
+
 function scrollable() {
   let scrollableElement = document.getElementById('simple-bar');
   new SimpleBar(scrollableElement);
@@ -171,10 +205,14 @@ function renderContent(elementId, booking, {amenities, checkInAndOut, descriptio
   datePicker({
     root: document.querySelector('#check-in'),
     booking,
+    holidayPrice,
+    normalDayPrice
   });
   datePicker({
     root: document.querySelector('#check-out'),
-    booking
+    booking,
+    holidayPrice,
+    normalDayPrice
   });
 
   bookRoom();
@@ -204,19 +242,7 @@ function submitForm(e) {
     return;
   }
 
-  // 取下一個日期
-  const addDays = (date, days = 1) => {
-    const result = new Date(date);
-    result.setDate(result.getDate() + days);
-    return result;
-  };
-  
-  // recursive fuction: put date range into array
-  const dateRange = (start, end, range = []) => {
-    if (start > end) return range;
-    const next = addDays(start, 1);
-    return dateRange(next, end, [...range, start]);
-  };
+
   
   const range = dateRange( new Date(startDate), new Date(endDate) );
   bookingDateRange = range.map(date => toISOLocal(date).slice(0, 10));

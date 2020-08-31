@@ -1,4 +1,4 @@
-const datePicker = ({root, booking}) => {
+const datePicker = ({root, booking, holidayPrice, normalDayPrice}) => {
   root.innerHTML = `
     <div class="simple-date-picker">
       <div class="selected-date"></div>
@@ -101,9 +101,9 @@ const datePicker = ({root, booking}) => {
 
     for (let i = 0; i < amountDays; i++) {
       const dayElement = document.createElement('div');
-      dayElement.classList.add('day');
-      dayElement.textContent = i + 1;
-  
+      dayElement.classList.add('day', 'tooltip');
+      // dayElement.textContent = i + 1;
+
       // 遇到當下日期/被選擇的日期，加上 css style
       if (selectedDay == (i + 1) && selectedYear == year && selectedMonth == month) {
         dayElement.classList.add('selected');
@@ -111,26 +111,46 @@ const datePicker = ({root, booking}) => {
 
       const tomorrow = new Date();
       tomorrow.setDate(tomorrow.getDate() + 1);
+      const ninetyDays = new Date();
+      ninetyDays.setDate(ninetyDays.getDate() + 90);
+      
       const checkToDate = new Date(`${year}-${month + 1}-${i + 1}`);
       const checkDateIso = toISOLocal(new Date(`${year}-${month + 1}-${i + 1}`)).slice(0, 10);
       let bookingDate = toISOLocal(new Date(booking[0])).slice(0, 10);
       let found = booking.find(item => item === checkDateIso)      
-      
+      dayElement.dataset.date = checkDateIso;
+      // 價格 tooltip
+      if (checkToDate.getDay() === 5 || checkToDate.getDay() === 6 || checkToDate.getDay() === 0) {
+        dayElement.dataset.price = holidayPrice;
+        dayElement.innerHTML = `
+          ${i + 1}
+          <span class="tooltiptext">$${holidayPrice}</span>
+        `;
+      } else {
+        dayElement.dataset.price = normalDayPrice;
+        dayElement.innerHTML = `
+        ${i + 1}
+        <span class="tooltiptext">$${normalDayPrice}</span>
+      `;
+      }
+
       if (found !== 'undefined' && found === checkDateIso){
         dayElement.classList.add('booked');
-      } else if (checkToDate < tomorrow) {
+      } else if (checkToDate < tomorrow || checkToDate > ninetyDays) {
         dayElement.classList.add('overtime');
       } else {
 
-        dayElement.addEventListener('click', function() {
+        dayElement.addEventListener('click', function(e) {  
+          let price = e.target.dataset.price;
+          let source = e.target.parentNode.parentNode.parentNode.parentNode.id;
           selectedDate = new Date(year + '-' + (month+1) + '-' + (i+1));
           selectedDay = (i + 1);
           selectedMonth = month;
           selectedYear = year;
           selectedDateElement.textContent = formatDate(selectedDate);
           selectedDateElement.dataset.value = dataSetFormat(selectedDate); // 在元素上加入 dataset，之後要取得日期比較容易。
-          
-          populateDates(selectedMonth, selectedYear); // 當選擇了某一天，日期區塊需要重新更新。
+          populateDates(selectedMonth, selectedYear); // 當選擇了某一天，日期區塊需要重新更新。          
+          setDatePrice(source, selectedDate, price);
         });
       }
       daysElement.appendChild(dayElement);
@@ -154,3 +174,5 @@ const datePicker = ({root, booking}) => {
     return new Date(year, month, 1).getDay();
   }
 }
+
+

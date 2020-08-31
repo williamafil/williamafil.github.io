@@ -46,3 +46,17 @@ function formatDate(d) {
   }
   return `${year}-${month}-${day}`;
 }
+
+  // 取下一個日期
+  const addDays = (date, days = 1) => {
+    const result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+  };
+  
+  // recursive fuction: put date range into array
+  const dateRange = (start, end, range = []) => {
+    if (start > end) return range;
+    const next = addDays(start, 1);
+    return dateRange(next, end, [...range, start]);
+  };
