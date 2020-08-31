@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+.simple-date-picker {
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  width: 240px;
+  height: 70px;
+  background-color: #fff;
+  padding: 5px 20px;
+  margin: 10px auto;
+  box-shadow: 0px 2px 6px rgba(0,0,0,.2);
+  cursor: pointer;
+  user-select: none;
+}
+
+.simple-date-picker:hover {
+  background-color: whitesmoke;
+}
+
+.simple-date-picker .selected-date {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #313131;
+  font-weight: 300;
+  font-size: 2rem;
+  letter-spacing: 3px;
+}
+
+.simple-date-picker .dates {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #fff;
+}
+
+.simple-date-picker .dates.active {
+  display: block;
+}
+
+/* 月份選擇 */
+.simple-date-picker .dates .month {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #eee;
+  padding: 5px;
+}
+
+.simple-date-picker .dates .month .month-label {
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+/* 月份選擇 左右按鈕 */
+.simple-date-picker .dates .month .btns {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #313131;
+  font-size: 20px;
+  border-radius: 50%;
+  margin: 0 8px;
+}
+
+.simple-date-picker .dates .month .btns:hover {
+  background-color: whitesmoke;
+  color: #999;
+}
+
+.simple-date-picker .dates .month .btns:active {
+  background-color: azure;
+  color: #bbb;
+}
+
+/* WEEK */
+.simple-date-picker .dates .weekday {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.simple-date-picker .dates .weekday .week {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #313131;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 15px 0 0 0;
+}
+
+.simple-date-picker .dates .days .space {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  height: 25px;
+}
+
+
+
+/* 日期選擇器 */
+.simple-date-picker .dates .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.simple-date-picker .dates .days .day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #313131;
+  font-size: 15px;
+  font-weight: 300;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  background-color: #eee;
+  padding-top: 1px;
+  margin: 5px;
+  height: 25px;
+}
+
+.simple-date-picker .dates .days .day:hover {
+  font-weight: 700;
+  background-color: #fff;
+  border: 1px solid #eee;
+}
+
+
+.simple-date-picker .dates .days .day.overtime {
+  color: #ccc;
+}
+
+.simple-date-picker .dates .days .day.booked {
+  position: relative;
+  color: #ccc;
+}
+
+.simple-date-picker .dates .days .day.booked::after {
+  content: '❌';
+  /* color: rgba(255,0,0,.4); */
+  position: absolute;
+  top: 6px;
+  left: 3px;
+}
+
+.simple-date-picker .dates .days .day:active,
+.simple-date-picker .dates .days .day.selected  {
+  font-weight: 700;
+  background-color: lightsalmon;
+  border: 1px solid lightsalmon;
+  color: #fff;
+}
